@@ -1,3 +1,7 @@
 @import "tailwindcss";
 
 /* this is to be at top of css file */
+
+@theme {
+    --font-inter: 'Inter', 'sans-serif';
+}

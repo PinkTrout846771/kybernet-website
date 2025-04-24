@@ -4,20 +4,20 @@ function Navbar() {
 
     return (
         <>
-            <div className='h-20 flex content-center items-center justify-between font-mono'>
-                <div className='ml-6 mt-4'>
+            <div className='fixed top-0 w-screen h-26 p-6 flex content-center items-center justify-between font-inter function'>
+                <div className=''>
                     <img src={KyberNetLogo} alt="KyberNet LLC" className='w-40 h-16 object-contain'></img>
                 </div>
-                <div className='bg-orange-50 px-5 py-3 rounded-2xl text-xl font-semibold'>
-                    <ul className='flex space-x-6'>
+                <div className='bg-orange-100 px-5 py-3 rounded-2xl'>
+                    <ul className='flex space-x-6 text-lg font-normal text-gray-800'>
                         <li>Team</li>
                         <li>Clients</li>
                         <li>About Us</li>
                         <li>Pricing</li>
                     </ul>
                 </div>
-                <div className='mr-6 mt-4'>
-                    <img src={KyberNetLogo} alt="KyberNet LLC" className='w-40 h-16 object-contain'></img>
+                <div className='bg-blue-300 px-5 py-3 rounded-2xl'>
+                    Contact
                 </div>
             </div>
         </>
