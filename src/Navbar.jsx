@@ -6,17 +6,19 @@ import { useState, useEffect } from 'react'
 function SideBar({ isOpen, handleMenuDiv }) {
     return (
         <>
-            <img src={BurgerMenu} alt="Burger Menu" className={`fixed ${isOpen ? 'scale-0' : 'scale-100'} w-24 h-10 transition-all ease-in-out z-10 right-0 block md:hidden lg:hidden object-contain`} onClick={() => handleMenuDiv()}></img>
-            <img src={XIcon} alt="Burger Menu" className={`fixed ${isOpen ? 'scale-100' : 'scale-0'} w-24 h-14 transition-all ease-in-out z-10 right-0 block md:hidden lg:hidden object-contain`} onClick={() => handleMenuDiv()}></img>
-            <div className={`fixed ${isOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-500 w-1/2 h-screen right-0 top-0 bg-blue-100 font-inter`}>
-                <div className='ml-24 mt-28 tracking-wide text-gray-700'>
-                    <h2 className={`${isOpen ? 'translate-x-0' : 'translate-x-100'} text-sm font-semibold mb-10 tracking-widest transition-all duration-500 text-black`}>SITEMAP</h2>
-                    <ul className='flex flex-col space-y-6 text-3xl font-bold transition-colors'>
-                            <li className={`${isOpen ? 'translate-x-0 duration-600' : 'translate-x-100 duration-600'} hover:text-red-600 transition-all hover:duration-300`}>Team</li>
-                            <li className={`${isOpen ? 'translate-x-0 duration-700' : 'translate-x-100 duration-700'} hover:text-red-600 transition-all hover:duration-300`}>About Us</li>
-                            <li className={`${isOpen ? 'translate-x-0 duration-800' : 'translate-x-100 duration-800'} hover:text-red-600 transition-all hover:duration-300`}>Clients</li>
-                            <li className={`${isOpen ? 'translate-x-0 duration-900' : 'translate-x-100 duration-900'} hover:text-red-600 transition-all hover:duration-300`}>Pricing</li>
-                    </ul>
+            <div className='md:hidden lg:hidden'>
+                <img src={BurgerMenu} alt="Burger Menu" className={`fixed ${isOpen ? 'scale-0' : 'scale-100'} w-24 h-10 transition-all ease-in-out z-10 right-0 block object-contain`} onClick={() => handleMenuDiv()}></img>
+                <img src={XIcon} alt="Burger Menu" className={`fixed ${isOpen ? 'scale-125' : 'scale-0'} w-24 h-10 transition-all ease-in-out z-10 right-0 block object-contain`} onClick={() => handleMenuDiv()}></img>
+                <div className={`fixed ${isOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-500 w-[280px] h-screen right-0 top-0 bg-blue-100 font-inter`}>
+                    <div className='ml-12 mt-28 tracking-wide text-gray-700'>
+                        <h2 className={`${isOpen ? 'translate-x-0' : 'translate-x-100'} text-sm font-semibold mb-10 tracking-widest transition-all duration-500 text-black`}>SITEMAP</h2>
+                        <ul className='flex flex-col space-y-6 text-3xl font-bold transition-colors'>
+                                <li className={`${isOpen ? 'translate-x-0 duration-600' : 'translate-x-100 duration-600'} active:text-red-600 transition-all active:duration-300`}>Team</li>
+                                <li className={`${isOpen ? 'translate-x-0 duration-700' : 'translate-x-100 duration-700'} active:text-red-600 transition-all active:duration-300`}>About Us</li>
+                                <li className={`${isOpen ? 'translate-x-0 duration-800' : 'translate-x-100 duration-800'} active:text-red-600 transition-all active:duration-300`}>Clients</li>
+                                <li className={`${isOpen ? 'translate-x-0 duration-900' : 'translate-x-100 duration-900'} active:text-red-600 transition-all active:duration-300`}>Pricing</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </>
