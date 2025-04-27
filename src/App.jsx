@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Navbar/>
-      <div className='bg-orange-500'>
+      <div className=' overflow-hidden mt-60'>
         <div className='bg-red-800 w-fit m-60 p-10 rounded-2xl text-white '>1</div>
         <div className='bg-red-800 w-fit m-60 p-10 rounded-2xl text-white '>2</div>
         <div className='bg-red-800 w-fit m-60 p-10 rounded-2xl text-white '>3</div>
