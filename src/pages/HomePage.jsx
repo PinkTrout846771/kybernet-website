@@ -1,22 +1,26 @@
 import DummyImg from '../assets/dummy-img-kybernet.svg'
 
+/*<h1 className="text-fuchsia-300 font-bold tracking-widest text-6xl mb-16 w-1/6">Protect Businesses.</h1>*/
+
 export default function HomePage() {
 
     return (
       <>
-        <div className='flex justify-row align-middle'>
-          <div className='overflow-hidden h-screen px-28 py-18 antialiased'>
-            <h1 className="text-gray-700 font-bold tracking-widest text-6xl mb-2">Ensure Growth.</h1>
-            <h1 className="text-fuchsia-300 font-bold tracking-widest text-6xl mb-16 w-1/6">Protect Businesses.</h1>
-            <h2 className="text-gray-600 font-normal tracking-tight text-2xl line-clamp-2 w-1/2 mb-16">Providing Top-tier Consulting Services in Cyber Security</h2>
+        <div className='flex flex-col lg:flex-row align-middle w-screen min-h-[calc(100vh-96px)] items-center lg:items-start justify-center antialiased mt-6'>
+          <div className='h-full w-1/2 px-16 py-10 lg:px-28 lg:py-18 ml-4'>
+            <h1 className="text-gray-700 font-bold tracking-widest text-5xl lg:text-6xl mb-16">Ensure Growth.<br></br><span className='text-fuchsia-300'>Protect<br></br>Businesses.</span></h1>
+            <h2 className="text-gray-600 font-normal tracking-tight text-2xl mb-16">Providing Top-tier Consulting<br></br>Services in Cyber Security</h2>
 
-            <button className='px-16 py-4 rounded-2xl text-lg font-bold text-black bg-radial bg-linear-to-l from-blue-300 to-blue-400 hover:from-blue-400 hover:to-blue-500 hover:-translate-y-2 hover:duration-500 duration-500'>
+            <button className='px-16 py-4 rounded-2xl text-lg font-bold text-gray-800 bg-linear-to-l from-blue-300 to-blue-400 hover:from-blue-400 hover:to-blue-500 hover:-translate-y-2 hover:duration-500 duration-500'>
               Learn More
             </button>
           </div>
-          <div className='flex items-center'>
-            <img src={DummyImg} className='shadow-black drop-shadow-2xl rounded-4xl' />
+          <div className='w-1/2 px-10 lg:mt-64 lg:px-0'>
+            <img src={DummyImg} className='shadow-black drop-shadow-2xl rounded-4xl left-0' />
           </div>
+        </div>
+        <div className='flex justify-center p-16'>
+          <h1 className="text-gray-700 font-bold tracking-widest text-6xl leading-18 text-center bg-radial from-blue-50 to-amber-50 from-0% to-80%">Strategized <span className='text-fuchsia-300'>High<br></br>Level</span> Security</h1>
         </div>
       </>
     )

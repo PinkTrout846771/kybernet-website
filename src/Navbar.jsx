@@ -28,7 +28,7 @@ function SideBar({ isOpen, handleMenuDiv }) {
     )
 }
 
-function Navbar() {
+function Navbar({ page }) {
 
     const [sideBarOpen, setSideBarOpen] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -57,18 +57,18 @@ function Navbar() {
 /*relative rounded-full bg-amber-50 py-14 pt-6 mt-10 px-4*/
     return (
         <>
-            <div className={`sticky top-0 w-screen h-26 p-16 px-6 md:px-18 lg:px-18 xl:px-18 2xl:px-18 flex content-center items-center justify-between font-inter antialiased tracking-wide transition-colors ${scrollPosition > 40 && 'bg-orange-100 duration-200'}`}>
-                <div className='relative w-34 h-26 flex items-center'>
+            <div className={`sticky z-10 top-0 w-screen h-20 p-12 px-6 md:px-18 flex content-center items-center justify-between font-inter antialiased tracking-wide transition-colors ${scrollPosition > 40 && 'bg-orange-100 duration-200'}`}>
+                <div className='relative w-34 h-20 flex items-center'>
                     <Link to="/">
                         <img src={KyberNetNoLogo} alt="KyberNet LLC" className='object-contain'></img>
                     </Link>
                 </div>
                 <div className='hidden md:block lg:block px-5 py-3 rounded-2xl'>
                     <ul className={`flex space-x-12 md:space-x-8 text-lg font-semibold duration-200 ${scrollPosition > 40 ? 'text-gray-700' : 'text-gray-900'} tracking-widest`}>
-                        <Link to="/home"><li className='hover:text-red-300'>Home</li></Link>
-                        <Link to="/team"><li className='hover:text-red-300'>Team</li></Link>
-                        <Link to="/clients"><li className='hover:text-red-300'>Clients</li></Link>
-                        <Link to="/about"><li className='hover:text-red-300'>About Us</li></Link>
+                        <Link to="/home"><li className={`hover:text-red-300 ${ page=='home' && 'text-red-300' }`}>Home</li></Link>
+                        <Link to="/team"><li className={`hover:text-red-300 ${ page=='team' && 'text-red-300' }`}>Team</li></Link>
+                        <Link to="/clients"><li className={`hover:text-red-300 ${ page=='clients' && 'text-red-300' }`}>Clients</li></Link>
+                        <Link to="/about"><li className={`hover:text-red-300 ${ page=='about' && 'text-red-300' }`}>About Us</li></Link>
                     </ul>
                 </div>
                 <button className='hidden md:block lg:block bg-linear-to-l from-blue-300 to-blue-400  hover:from-blue-400 hover:to-blue-500 hover:-translate-y-2 hover:duration-500 duration-500 px-8 py-4 rounded-2xl text-lg font-bold text-gray-800'>

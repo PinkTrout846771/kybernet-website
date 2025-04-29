@@ -14,16 +14,16 @@ const bg = 'bg-amber-50 bg-radial'
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <div className={bg}><Navbar /><HomePage /></div>,
+    element: <div className={bg}><Navbar page='home' /><HomePage /></div>,
     errorElement: <NotFoundPage />,
   },
   {
     path: '/home',
-    element: <div className={bg}><Navbar /><HomePage /></div>,
+    element: <div className={bg}><Navbar page='home' /><HomePage /></div>,
   },
   {
     path: '/team',
-    element: <div className={bg}><Navbar /><TeamPage /></div>,
+    element: <div className={bg}><Navbar page='team' /><TeamPage /></div>,
   },
 ]);
 
