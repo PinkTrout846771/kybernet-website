@@ -9,19 +9,21 @@ import Navbar from './Navbar.jsx'
 
 import './index.css'
 
+const bg = 'bg-amber-50 bg-radial'
+
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <><Navbar /><HomePage /></>,
+    element: <div className={bg}><Navbar /><HomePage /></div>,
     errorElement: <NotFoundPage />,
   },
   {
     path: '/home',
-    element: <><Navbar /><HomePage /></>,
+    element: <div className={bg}><Navbar /><HomePage /></div>,
   },
   {
     path: '/team',
-    element: <><Navbar /><TeamPage /></>,
+    element: <div className={bg}><Navbar /><TeamPage /></div>,
   },
 ]);
 
