@@ -9,7 +9,7 @@ import Navbar from './Navbar.jsx'
 
 import './index.css'
 
-const bg = 'bg-amber-50 bg-radial'
+const bg = 'bg-amber-50 bg-radial flex flex-col justify-center items-center'
 
 const router = createBrowserRouter([
   {
