@@ -17,9 +17,9 @@ function CardContainer({ cards }) {
     const relativePosition = (index - frontCardIndex + cards.length) % cards.length;
     
     if (relativePosition === 1) {
-      return "z-20 opacity-80 -translate-x-16 translate-y-8"; // Middle card
+      return "z-20 opacity-80 -translate-x-16 translate-y-8 hover:-rotate-12"; // Middle card
     } else {
-      return "z-10 opacity-60 translate-x-16 translate-y-8"; // Back card
+      return "z-10 opacity-60 translate-x-16 translate-y-8 hover:rotate-12"; // Back card
     }
   };
 
@@ -31,7 +31,7 @@ function CardContainer({ cards }) {
         {cards.map((card, index) => (
           <div 
             key={index}
-            className={`absolute inset-0 bg-blue-200 drop-shadow-xl rounded-2xl p-4 px-12 text-center antialiased transition-all duration-300 cursor-pointer ${getCardStyle(index)}`}
+            className={`absolute inset-0 bg-blue-200 hover:-translate-y-12 hover:duration-200 drop-shadow-xl rounded-2xl p-4 px-12 text-center antialiased transition-all duration-300 cursor-pointer ${getCardStyle(index)}`}
             onClick={() => setFrontCardIndex(index)}
           >
             <h1 className="font-semibold text-lg mb-6 text-gray-700">{card.title}</h1>
@@ -96,34 +96,52 @@ export default function HomePage() {
 
     return (
       <>
-      <div className='flex flex-col justify-center w-screen items-center space-y-20'>
-        <div className='flex flex-col space-y-0 lg:flex-row align-middle w-screen h-[calc(100vh-96px)] min-h-[1224px] lg:min-h-auto items-center max-w-[1980px] lg:items-start justify-center antialiased lg:mt-6 overflow-hidden'>
-          <div className='py-32 space-y-22 w-screen flex flex-col items-center justify-center -mt-12 lg:items-start lg:w-1/2 lg:px-28 lg:py-18'>
-            <div className="text-gray-700 font-bold tracking-widest lg:text-6xl text-6xl flex justify-center">
-              <div className='inline-block w-[90%] sm:w-full'>
-                <span className='text-left'>Ensure Growth.</span>
-                <br></br>
-                <span className='text-fuchsia-300'>Protect<br></br>Businesses.</span>
+        <div className="flex flex-col w-full">
+          <div className="flex flex-col lg:flex-row w-full">
+            {/*left half*/}
+            <div className="w-full p-6 md:p-12 lg:p-18">
+              {/*container for the 3 elements*/}
+              <div className="flex flex-col space-y-12 justify-center items-start tracking-widest">
+                <div className="text-6xl text-gray-700 font-semibold">
+                  <span className="text-left">Ensure Growth.</span>
+                  <br></br>
+                  <span className="text-fuchsia-300">
+                    Protect Your<br></br>Business.
+                  </span>
+                </div>
+
+                <h2 className="text-gray-600 font-normal tracking-tight text-2xl">
+                  Providing Top-tier Consulting<br></br>Services in Cyber
+                  Security
+                </h2>
+
+                <button className="px-16 py-4 rounded-2xl text-lg font-bold text-gray-800 bg-linear-to-l from-blue-300 to-blue-400 hover:from-blue-400 hover:to-blue-500 hover:-translate-y-1 hover:duration-300 duration-300">
+                  Learn More
+                </button>
               </div>
             </div>
-            <h2 className="text-gray-600 font-normal tracking-tight text-2xl">Providing Top-tier Consulting<br></br>Services in Cyber Security</h2>
-
-            <button className='px-16 py-4 rounded-2xl text-lg font-bold text-gray-800 bg-linear-to-l from-blue-300 to-blue-400 hover:from-blue-400 hover:to-blue-500 hover:-translate-y-1 hover:duration-300 duration-300'>
-              Learn More
-            </button>
+            {/*right half*/}
+            <div className="w-full p-6 flex justify-center items-center lg:justify-start">
+              <img
+                src={DummyImg}
+                className="shadow-black drop-shadow-2xl rounded-4xl lg:scale-[80%] lg:mt-24"
+              />
+            </div>
           </div>
 
-          <div className='lg:w-1/2 px-10 lg:mt-64 lg:px-16'>
-            <img src={DummyImg} className='shadow-black drop-shadow-2xl rounded-4xl left-0' />
+          <div className="w-full p-6 text-6xl font-semibold text-gray-700 wrap-break-word text-center tracking-wide bg-radial from-blue-50 to-amber-50 from-0% to-80%">
+            <span className="text-left">Strategized </span>
+            <span className="text-fuchsia-300">High Level </span>
+            <span className="text-left">Security</span>
+          </div>
+
+          <div className="p-6 pb-8 scale-75 sm:scale-100 flex justify-center">
+            <CardContainer cards={cardsData} />
+          </div>
+          <div className='p-6'>
+            4
           </div>
         </div>
-
-        <div className='flex justify-center p-16 w-[90%] sm:w-full'>
-          <h1 className="text-gray-700 font-bold tracking-widest text-6xl leading-18 text-center bg-radial from-blue-50 to-amber-50 from-0% to-80%">Strategized <span className='text-fuchsia-300'>High<br></br>Level</span> Security</h1>
-        </div>
-
-        <div className='px-12 pb-32'><CardContainer cards={cardsData} /></div>
-      </div>
       </>
-    )
+    );
 }
