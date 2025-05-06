@@ -7,10 +7,10 @@ import { Link } from "react-router-dom"
 function SideBar({ isOpen, handleMenuDiv }) {
     return (
         <>
-            <div className='md:hidden lg:hidden antialiased'>
-                <div className='sticky top-0 z-10'>
-                    <img src={BurgerMenu} alt="Burger Menu" className={`${isOpen ? 'scale-0' : 'scale-100'} absolute w-24 h-10 transition-all ease-in-out block object-contain`} onClick={() => handleMenuDiv()}></img>
-                    <img src={XIcon} alt="Burger Menu" className={`${isOpen ? 'scale-125' : 'scale-0'} w-24 h-10 transition-all ease-in-out block object-contain`} onClick={() => handleMenuDiv()}></img>
+            <div className='md:hidden lg:hidden antialiased flex'>
+                <div className='sticky top-0 z-10 flex justify-end cursor-pointer'>
+                    <img src={BurgerMenu} alt="Burger Menu" className={`${isOpen ? 'scale-0' : 'scale-100'} absolute w-10 h-10 transition-all ease-in-out block object-contain`} onClick={() => handleMenuDiv()}></img>
+                    <img src={XIcon} alt="Burger Menu" className={`${isOpen ? 'scale-125' : 'scale-0'} w-10 h-10 transition-all ease-in-out block object-contain`} onClick={() => handleMenuDiv()}></img>
                 </div>
                 <div className={`fixed ${isOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-500 w-[280px] h-screen right-0 top-0 bg-blue-100 font-inter`}>
                     <div className='ml-12 mt-28 tracking-wide text-gray-700'>
@@ -57,7 +57,7 @@ function Navbar({ page }) {
 /*relative rounded-full bg-amber-50 py-14 pt-6 mt-10 px-4*/
     return (
         <>
-            <div className={`sticky z-10 top-0 w-screen h-20 p-12 px-6 md:px-18 flex content-center items-center justify-between font-inter antialiased tracking-wide transition-colors ${scrollPosition > 40 && 'bg-orange-100 duration-200'}`}>
+            <div className={`sticky z-50 top-0 w-screen h-20 p-12 px-6 md:px-18 flex content-center items-center justify-between font-inter antialiased tracking-wide transition-colors ${scrollPosition > 40 && 'bg-orange-100 duration-200'}`}>
                 <div className='relative w-34 h-20 flex items-center'>
                     <Link to="/">
                         <img src={KyberNetNoLogo} alt="KyberNet LLC" className='object-contain'></img>
