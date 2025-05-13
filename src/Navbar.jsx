@@ -57,11 +57,12 @@ function Navbar({ page }) {
 /*relative rounded-full bg-amber-50 py-14 pt-6 mt-10 px-4*/
     return (
         <>
-            <div className={`sticky z-50 top-0 w-full h-20 p-12 px-6 md:px-18 flex content-center items-center justify-between font-inter antialiased tracking-wide transition-colors ${scrollPosition > 40 && 'bg-orange-100 duration-200'}`}>
+            <div className={`sticky z-50 top-0 w-full h-20 p-12 px-6 md:px-18 flex content-center items-center justify-between font-inter antialiased tracking-wide transition-colors ${scrollPosition > 40 && 'bg-gray-800 duration-100'}`}>
                 <div className='relative w-34 h-20 flex items-center'>
-                    <Link to="/">
+                    <span className="text-fuchsia-300 font-bold text-3xl tracking-wide">Kybernet</span>
+                    {/*<Link to="/">
                         <img src={KyberNetNoLogo} alt="KyberNet LLC" className='object-contain'></img>
-                    </Link>
+                    </Link>*/}
                 </div>
                 <div className='hidden md:block lg:block px-5 py-3 rounded-2xl'>
                     <ul className={`flex space-x-12 md:space-x-8 text-lg font-semibold duration-200 ${scrollPosition > 40 ? 'text-gray-700' : 'text-gray-900'} tracking-widest`}>
